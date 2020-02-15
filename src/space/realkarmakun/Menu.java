@@ -14,14 +14,15 @@ public class Menu {
         System.out.println("Константинов Павел. Лабараторная работа. 4 Семестр.");
         System.out.println("v.1");
         System.out.println("0. Выход из программы.");
-        System.out.println("1. Работа с формулой (1 задание).");
+        System.out.println("1. 'Hello, World!' (1 задание).");
+        System.out.println("2. Работа с формулой (1 задание).");
         /*
         for (MenuOptions o : MenuOptions.values()) {
             System.out.println(o.getOrderNumber() + ". " + o.getDescription());
         }
          */
         System.out.println("=============================================");
-        System.out.print("Введите ваше число: ");
+        System.out.print("Введите номер пункта меню: ");
 
         boolean foolCheck = false;
         do {
@@ -43,6 +44,10 @@ public class Menu {
                     System.exit(0);
                     break;
                 case (1):
+                    Utils.helloWorld();
+                    exit = true;
+                    break;
+                case (2):
                     formulaSequence();
                     exit = true;
                     break;
@@ -54,6 +59,7 @@ public class Menu {
                     break;
             }
         } while (!exit);
+        System.out.println("Успешно!");
     }
 
     public static void formulaSequence() {
@@ -72,8 +78,20 @@ public class Menu {
                 x = inp.nextDouble();
                 System.out.print("Введите y: ");
                 y = inp.nextDouble();
+                if (y < 0 ) {
+                    System.out.println("Значение y не может быть меньше нуля. (Корень отрицательного числа).");
+                    System.out.println("Попробуйте еще раз.");
+                    foolCheck = false;
+                    continue;
+                }
                 System.out.print("Введите z: ");
                 z = inp.nextDouble();
+                if (z == 0 ) {
+                    System.out.println("Значение z не может быть равно нулю. (Деление на ноль).");
+                    System.out.println("Попробуйте еще раз.");
+                    foolCheck = false;
+                    continue;
+                }
                 foolCheck = true;
             } catch (InputMismatchException ex) {
                 System.out.println("Неверный ввод. Попробуйте еще раз.");
@@ -81,10 +99,9 @@ public class Menu {
                 inp.nextLine();
             }
         } while (!foolCheck);
-
-        System.out.print("("+ x + " + " + y + Utils.calculation(x,y,z));
-
-
+        System.out.print("Результат: ");
+//        System.out.println("("+ x + " + " + y + ")" + " / " + z + " = " + Utils.calculation(x,y,z));
+        System.out.printf("(%.3f + %.3f^(1/2)) / %.3f 1= %.3f \n", x, y, z, Utils.calculation(x,y,z));
     }
 
     }
