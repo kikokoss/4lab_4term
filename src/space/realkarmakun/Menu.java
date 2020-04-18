@@ -44,7 +44,7 @@ public class Menu {
                     System.exit(0);
                     break;
                 case (1):
-                    Utils.helloWorld();
+                    new HelloWorld();
                     exit = true;
                     break;
                 case (2):
@@ -59,7 +59,6 @@ public class Menu {
                     break;
             }
         } while (!exit);
-        System.out.println("Успешно!");
     }
 
     public static void formulaSequence() {

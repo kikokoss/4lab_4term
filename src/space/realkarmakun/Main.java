@@ -6,6 +6,8 @@ public class Main {
 
         Menu menuInstance = new Menu();
 
-        do {menuInstance.evoke();} while (true);
+        do {
+            menuInstance.evoke();
+        } while (true);
     }
 }
