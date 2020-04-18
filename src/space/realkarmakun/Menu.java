@@ -9,7 +9,7 @@ public class Menu {
     private static int key;
     // private static MenuOptions key;
 
-    public static void evoke() {
+    public Menu() {
         System.out.println("=============================================");
         System.out.println("Константинов Павел. Лабараторная работа. 4 Семестр.");
         System.out.println("v.1");

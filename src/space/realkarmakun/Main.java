@@ -4,10 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Menu menuInstance = new Menu();
+        while (true) {
+            new Menu();
+        }
 
-        do {
-            menuInstance.evoke();
-        } while (true);
     }
 }
