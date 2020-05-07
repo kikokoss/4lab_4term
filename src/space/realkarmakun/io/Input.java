@@ -1,11 +1,11 @@
-package space.realkarmakun;
+package space.realkarmakun.io;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 // Просто класс с разными побочными методами
 
-public class Utils {
+public class Input {
 
     //Метод проверки на дурака для int. Пропускает только int.
     public static int readIntWithCheck(Scanner inp, String errorMessage) {

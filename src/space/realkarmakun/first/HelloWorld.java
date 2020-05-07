@@ -1,4 +1,4 @@
-package space.realkarmakun;
+package space.realkarmakun.first;
 
 public class HelloWorld {
 

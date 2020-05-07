@@ -1,8 +1,11 @@
 package space.realkarmakun;
 
+import space.realkarmakun.first.Formula;
+import space.realkarmakun.first.HelloWorld;
+
 import java.util.Scanner;
 
-import static space.realkarmakun.Utils.readIntWithCheck;
+import static space.realkarmakun.io.Input.readIntWithCheck;
 
 public class Menu {
 
@@ -32,7 +35,7 @@ public class Menu {
                     break;
                 case (2):
                     System.out.println("Будет вычислятся следующая формула: (x + y^(1/2)) / z");
-                    new FormulaFirstTask(inp);
+                    new Formula(inp);
                     exit = true;
                     break;
                 default:
