@@ -2,9 +2,11 @@ package space.realkarmakun;
 
 import space.realkarmakun.first.Formula;
 import space.realkarmakun.first.HelloWorld;
+import space.realkarmakun.second.Recursion;
 
 import java.util.Scanner;
 
+import static space.realkarmakun.io.Input.readDateWithCheck;
 import static space.realkarmakun.io.Input.readIntWithCheck;
 
 public class Menu {
@@ -18,6 +20,7 @@ public class Menu {
         System.out.println("0. Выход из программы.");
         System.out.println("1. 'Hello, World!'");
         System.out.println("2. Formula Calculation");
+        System.out.println("3. Power of two");
         System.out.println("=============================================");
 
         //Выбор пункта меню через switch
@@ -36,6 +39,11 @@ public class Menu {
                 case (2):
                     System.out.println("Будет вычислятся следующая формула: (x + y^(1/2)) / z");
                     new Formula(inp);
+                    exit = true;
+                    break;
+                case (3):
+                    System.out.println("Даты должны быть в формате ДД.ММ.ГГГГ");
+                    new Recursion(inp);
                     exit = true;
                     break;
                 default:

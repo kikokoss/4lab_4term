@@ -56,7 +56,7 @@ public class Formula {
         }
     }
 
-    public void setZ( double z) throws FormulaException {
+    private void setZ( double z) throws FormulaException {
         if (z == 0) {
             System.out.println("Значение z не может быть равно нулю. (Деление на ноль).");
             throw new FormulaException();
