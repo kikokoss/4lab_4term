@@ -16,11 +16,11 @@ public class Menu {
     public Menu() {
         System.out.println("=============================================");
         System.out.println("Константинов Павел. Лабараторная работа. 4 Семестр.");
-        System.out.println("v.1.1");
-        System.out.println("0. Выход из программы.");
-        System.out.println("1. 'Hello, World!'");
-        System.out.println("2. Formula Calculation");
-        System.out.println("3. Power of two");
+        System.out.println("v.1.2");
+        System.out.println("[0] Выход из программы.");
+        System.out.println("[1] 'Hello, World!'");
+        System.out.println("[2] Formula Calculation");
+        System.out.println("[3] Accurate power of two");
         System.out.println("=============================================");
 
         //Выбор пункта меню через switch
