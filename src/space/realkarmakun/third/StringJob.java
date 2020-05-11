@@ -31,6 +31,7 @@ public class StringJob extends Task {
         checkStringForRegex(secondString, "Вторая строка является...");
     }
 
+
     private boolean stringsEquality(String first, String second) {
 
         return first.compareTo(second) == 0;
