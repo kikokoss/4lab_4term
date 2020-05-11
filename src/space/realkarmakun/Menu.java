@@ -4,6 +4,7 @@ import space.realkarmakun.first.Formula;
 import space.realkarmakun.first.HelloWorld;
 import space.realkarmakun.second.Recursion;
 import space.realkarmakun.tasks.Task;
+import space.realkarmakun.third.StringJob;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -24,6 +25,7 @@ public class Menu {
         System.out.println("[1] 'Hello, World!'");
         System.out.println("[2] Formula Calculation");
         System.out.println("[3] Accurate power of two");
+        System.out.println("[4] String Job");
         System.out.println("=============================================");
 
         //Выбор пункта меню через switch
@@ -47,6 +49,10 @@ public class Menu {
                 case (3):
                     System.out.println("Даты должны быть в формате ДД.ММ.ГГГГ");
                     new Recursion(inp);
+                    exit = true;
+                    break;
+                case (4):
+                    new StringJob(inp);
                     exit = true;
                     break;
                 default:
