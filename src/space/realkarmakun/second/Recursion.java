@@ -1,5 +1,7 @@
 package space.realkarmakun.second;
 
+import space.realkarmakun.tasks.Task;
+
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -8,7 +10,8 @@ import java.util.Scanner;
 import static space.realkarmakun.io.Input.readDateWithCheck;
 
 
-public class Recursion {
+public class Recursion extends Task {
+
     public ArrayList<Calendar> firstSegment = new ArrayList<Calendar>();
     public ArrayList<Calendar> secondSegment = new ArrayList<Calendar>();
 

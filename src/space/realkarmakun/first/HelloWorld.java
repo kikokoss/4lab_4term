@@ -1,8 +1,12 @@
 package space.realkarmakun.first;
 
-public class HelloWorld {
+import space.realkarmakun.tasks.Task;
 
-    public HelloWorld() {
+public class HelloWorld extends Task {
+
+    public String taskName = "Hello World";
+
+    public HelloWorld(){
         System.out.println("Hello, World!");
     }
 

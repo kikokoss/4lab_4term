@@ -1,11 +1,13 @@
 package space.realkarmakun.first;
 
 
+import space.realkarmakun.tasks.Task;
+
 import java.util.Scanner;
 
 import static space.realkarmakun.io.Input.readDoubleWithCheck;
 
-public class Formula {
+public class Formula extends Task {
     public double x;
     public double y;
     public double z;

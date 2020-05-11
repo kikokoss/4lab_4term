@@ -69,4 +69,20 @@ public class Input {
         return dateCandidate;
     }
 
+    public static String readStringWithCheck(Scanner inp, String errorMessage) {
+
+        String result;
+        while (true) {
+            try {
+                result = inp.nextLine();
+                inp.nextLine();
+                break;
+            } catch (InputMismatchException ex) {
+                System.out.println(errorMessage);
+                inp.nextLine();
+            }
+        }
+        return result;
+    }
+
 }
