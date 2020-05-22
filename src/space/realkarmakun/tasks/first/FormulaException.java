@@ -1,4 +1,4 @@
-package space.realkarmakun.first;
+package space.realkarmakun.tasks.first;
 
 public class FormulaException extends Exception {
 

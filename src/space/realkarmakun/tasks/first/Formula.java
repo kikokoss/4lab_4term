@@ -1,4 +1,4 @@
-package space.realkarmakun.first;
+package space.realkarmakun.tasks.first;
 
 
 import space.realkarmakun.tasks.Task;

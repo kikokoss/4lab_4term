@@ -1,4 +1,4 @@
-package space.realkarmakun.second;
+package space.realkarmakun.tasks.second;
 
 import space.realkarmakun.tasks.Task;
 
@@ -35,11 +35,11 @@ public class Recursion extends Task {
 
 
             long n = calculateDaysBetween(nSegment.get(0), nSegment.get(1));
-            if (!(n >= 100)) {
+            if (!(n >= 10)) {
                 accuratePowerOfTwo(n);
                 break;
             } else {
-                System.out.println("n больше либо равно 100, попробуйте взять меньший отрезок. \n");
+                System.out.println("n больше либо равно 10, попробуйте взять меньший отрезок. \n");
             }
         }
 
@@ -79,6 +79,7 @@ public class Recursion extends Task {
     }
 
     private ArrayList<Calendar> calculateSegmentsForN(ArrayList<Calendar> firstSegment, ArrayList<Calendar> secondSegment) {
+        /*
         if (firstSegment.get(1).compareTo(secondSegment.get(0)) <= 0) {
             System.out.println("Ваши отрезки не пересекаются. N будет меньше либо равен нулю. Попробуйте еще раз");
             return null;
@@ -87,6 +88,37 @@ public class Recursion extends Task {
             result.add(secondSegment.get(0));
             result.add(firstSegment.get(1));
             return result;
+        }
+         */
+        ArrayList<Calendar> result = new ArrayList<Calendar>();
+
+        if (firstSegment.get(1).compareTo(secondSegment.get(0)) <= 0) {
+            System.out.println("Ваши отрезки не пересекаются. N будет меньше либо равен нулю. Попробуйте еще раз");
+            return null;
+        }
+
+        result.add(calendarMax(firstSegment.get(0), secondSegment.get(0)));
+        result.add(calendarMin(firstSegment.get(1), secondSegment.get(1)));
+        return result;
+    }
+
+    private Calendar calendarMax(Calendar first, Calendar second) {
+        if (first.compareTo(second) > 0) {
+            return first;
+        } else if (first.compareTo(second) < 0) {
+            return second;
+        } else {
+            return second;
+        }
+    }
+
+    private Calendar calendarMin(Calendar first, Calendar second) {
+        if (first.compareTo(second) < 0) {
+            return first;
+        } else if (first.compareTo(second) > 0) {
+            return second;
+        } else {
+            return first;
         }
     }
 

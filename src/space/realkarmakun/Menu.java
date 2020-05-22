@@ -1,17 +1,12 @@
 package space.realkarmakun;
 
-import space.realkarmakun.first.Formula;
-import space.realkarmakun.first.HelloWorld;
-import space.realkarmakun.second.Recursion;
-import space.realkarmakun.tasks.Task;
-import space.realkarmakun.third.StringJob;
+import space.realkarmakun.tasks.first.Formula;
+import space.realkarmakun.tasks.first.HelloWorld;
+import space.realkarmakun.tasks.second.Recursion;
+import space.realkarmakun.tasks.third.StringJob;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
 
-import static space.realkarmakun.io.Input.readDateWithCheck;
 import static space.realkarmakun.io.Input.readIntWithCheck;
 
 public class Menu {

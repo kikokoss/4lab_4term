@@ -24,7 +24,6 @@ public class Input {
                 break;
             } catch (InputMismatchException ex) {
                 System.out.println(errorMessage);
-                inp.nextLine();
             }
         }
         return result;
@@ -38,11 +37,9 @@ public class Input {
         while (true) {
             try {
                 result = inp.nextDouble();
-                inp.nextLine();
                 break;
             } catch (InputMismatchException ex) {
                 System.out.println(errorMessage);
-                inp.nextLine();
             }
         }
         return result;
@@ -75,11 +72,9 @@ public class Input {
         while (true) {
             try {
                 result = inp.nextLine();
-                inp.nextLine();
                 break;
             } catch (InputMismatchException ex) {
                 System.out.println(errorMessage);
-                inp.nextLine();
             }
         }
         return result;
