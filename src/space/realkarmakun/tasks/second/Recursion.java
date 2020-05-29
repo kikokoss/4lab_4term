@@ -51,11 +51,11 @@ public class Recursion extends Task {
 
     private void accuratePowerOfTwo(long n) {
         if (n == 1) {
-            System.out.println("YES");
+            System.out.println("Является точной степенью двойки.");
         } else if ( n % 2 == 0) {
             accuratePowerOfTwo(n / 2);
         } else {
-            System.out.println("NO");
+            System.out.println("Не является точной степенью двойки.");
         }
     }
 
