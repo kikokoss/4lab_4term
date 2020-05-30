@@ -38,16 +38,16 @@ public class Menu {
                     break;
                 case (2):
                     System.out.println("Будет вычислятся следующая формула: (x + y^(1/2)) / z");
-                    new Formula(inp);
+                    new Formula().execute(inp);
                     exit = true;
                     break;
                 case (3):
                     System.out.println("Даты должны быть в формате ДД.ММ.ГГГГ");
-                    new Recursion(inp);
+                    new Recursion().execute(inp);
                     exit = true;
                     break;
                 case (4):
-                    new StringJob(inp);
+                    new StringJob().execute(inp);
                     exit = true;
                     break;
                 default:
