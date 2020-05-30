@@ -15,7 +15,8 @@ public class Recursion extends Task {
     public ArrayList<Calendar> firstSegment = new ArrayList<Calendar>();
     public ArrayList<Calendar> secondSegment = new ArrayList<Calendar>();
 
-    public Recursion(Scanner inp) {
+    @Override
+    public void execute(Scanner inp) {
 
         while (true) {
 
@@ -46,7 +47,7 @@ public class Recursion extends Task {
     }
 
     private long calculateDaysBetween(Calendar firstDate, Calendar secondDate) {
-        return ChronoUnit.DAYS.between(firstDate.toInstant(), secondDate.toInstant());
+        return ChronoUnit.DAYS.between(firstDate.toInstant(), secondDate.toInstant()) + 1;
     }
 
     private void accuratePowerOfTwo(long n) {
@@ -92,7 +93,7 @@ public class Recursion extends Task {
          */
         ArrayList<Calendar> result = new ArrayList<Calendar>();
 
-        if (firstSegment.get(1).compareTo(secondSegment.get(0)) <= 0) {
+        if (firstSegment.get(1).compareTo(secondSegment.get(0)) < 0) {
             System.out.println("Ваши отрезки не пересекаются. N будет меньше либо равен нулю. Попробуйте еще раз");
             return null;
         }

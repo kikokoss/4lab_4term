@@ -8,7 +8,8 @@ import static space.realkarmakun.io.Input.readStringWithCheck;
 
 public class StringJob extends Task {
 
-    public StringJob(Scanner inp) {
+    @Override
+    public void execute(Scanner inp) {
 
         System.out.println("Введите первую строку:");
         String firstString = readStringWithCheck(inp, "Вы ввели не строку. Попробуйте еще раз.");

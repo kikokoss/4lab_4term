@@ -14,7 +14,8 @@ public class Formula extends Task {
     public double result;
 
     //Конструктор по факту считает все что надо и выдает ответ. Если x, y или z не подходят, он будет переспрашивать
-    public Formula(Scanner inp) {
+    @Override
+    public void execute(Scanner inp) {
 
         System.out.println("Введите x:");
         setX(readDoubleWithCheck(inp ,"x не является double, попробуйте еще раз."));

@@ -33,7 +33,7 @@ public class Menu {
                     System.exit(0);
                     break;
                 case (1):
-                    new HelloWorld();
+                    new HelloWorld().execute(inp);
                     exit = true;
                     break;
                 case (2):
