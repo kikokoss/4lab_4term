@@ -18,10 +18,30 @@ public class StringJob extends Task {
 
         try {
             testEquality(firstString, secondString);
+        } catch (ValidationException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
             testTrueEquality(firstString, secondString);
+        } catch (ValidationException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
             testReverse(firstString, secondString);
-            checkStringForRegex(firstString, "Первая строка является...");
-            checkStringForRegex(secondString, "Вторая строка является...");
+        } catch (ValidationException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            checkStringForRegex(firstString, "Первая строка являеется...");
+        } catch (ValidationException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            checkStringForRegex(secondString, "Вторая строка является");
         } catch (ValidationException e) {
             System.out.println(e.getMessage());
         }
@@ -89,28 +109,22 @@ public class StringJob extends Task {
         if (input.matches(emailRegex)) {
             System.out.println("Электронной почтой");
             check = check +1;
-        } else {
-            throw new ValidationException("НЕ электронной почтой");
         }
 
         String phoneRegex = "^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$";
         if (input.matches(phoneRegex)) {
             System.out.println("Номером телефона");
             check = check +1;
-        } else {
-            throw new ValidationException("НЕ номером телефона");
         }
 
         String ipv4Regex = "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}";
         if (input.matches(ipv4Regex)) {
             System.out.println("IPv4 адресом");
             check = check +1;
-        } else {
-            throw new ValidationException("НЕ IPv4 адресом");
         }
 
         if (check == 0) {
-            System.out.println("Не почтой, не телефоном и не IPv4 адресом");
+            throw new ValidationException("Не почтой, не телефоном и не IPv4 адресом");
         }
     }
 
