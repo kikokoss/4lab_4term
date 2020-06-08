@@ -53,24 +53,22 @@ public class Menu {
             int key = readIntWithCheck(inp,"Не верный ввод. Должно быть число");
             switch (key) {
                 case (0):
-                    System.exit(0);
+                    menuItems.get(0).initialize(inp);
                     break;
                 case (1):
-                    new HelloWorld().execute(inp);
+                    menuItems.get(1).initialize(inp);
                     exit = true;
                     break;
                 case (2):
-
-                    new Formula().execute(inp);
+                    menuItems.get(2).initialize(inp);
                     exit = true;
                     break;
                 case (3):
-                    System.out.println("Даты должны быть в формате ДД.ММ.ГГГГ");
-                    new Recursion().execute(inp);
+                    menuItems.get(3).initialize(inp);
                     exit = true;
                     break;
                 case (4):
-                    new StringJob().execute(inp);
+                    menuItems.get(4).initialize(inp);
                     exit = true;
                     break;
                 default:
