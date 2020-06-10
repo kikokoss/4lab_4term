@@ -46,11 +46,11 @@ public class Recursion extends Task {
 
     }
 
-    private long calculateDaysBetween(Calendar firstDate, Calendar secondDate) {
+    public long calculateDaysBetween(Calendar firstDate, Calendar secondDate) {
         return ChronoUnit.DAYS.between(firstDate.toInstant(), secondDate.toInstant()) + 1;
     }
 
-    private void accuratePowerOfTwo(long n) {
+    public void accuratePowerOfTwo(long n) {
         if (n == 1) {
             System.out.println("Является точной степенью двойки.");
         } else if ( n % 2 == 0) {
@@ -60,7 +60,7 @@ public class Recursion extends Task {
         }
     }
 
-    private void createSegment(ArrayList<Calendar> segment, Scanner inp) {
+    public void createSegment(ArrayList<Calendar> segment, Scanner inp) {
 
         segment.clear();
         while (true) {
@@ -79,18 +79,7 @@ public class Recursion extends Task {
 
     }
 
-    private ArrayList<Calendar> calculateSegmentsForN(ArrayList<Calendar> firstSegment, ArrayList<Calendar> secondSegment) {
-        /*
-        if (firstSegment.get(1).compareTo(secondSegment.get(0)) <= 0) {
-            System.out.println("Ваши отрезки не пересекаются. N будет меньше либо равен нулю. Попробуйте еще раз");
-            return null;
-        } else {
-            ArrayList<Calendar> result = new ArrayList<Calendar>();
-            result.add(secondSegment.get(0));
-            result.add(firstSegment.get(1));
-            return result;
-        }
-         */
+    public ArrayList<Calendar> calculateSegmentsForN(ArrayList<Calendar> firstSegment, ArrayList<Calendar> secondSegment) {
         ArrayList<Calendar> result = new ArrayList<Calendar>();
 
         if (firstSegment.get(1).compareTo(secondSegment.get(0)) < 0) {
@@ -103,7 +92,7 @@ public class Recursion extends Task {
         return result;
     }
 
-    private Calendar calendarMax(Calendar first, Calendar second) {
+    public Calendar calendarMax(Calendar first, Calendar second) {
         if (first.compareTo(second) > 0) {
             return first;
         } else if (first.compareTo(second) < 0) {
@@ -113,7 +102,7 @@ public class Recursion extends Task {
         }
     }
 
-    private Calendar calendarMin(Calendar first, Calendar second) {
+    public Calendar calendarMin(Calendar first, Calendar second) {
         if (first.compareTo(second) < 0) {
             return first;
         } else if (first.compareTo(second) > 0) {
