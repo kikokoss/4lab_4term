@@ -4,6 +4,8 @@ import space.realkarmakun.tasks.second.Recursion;
 
 import java.util.Scanner;
 
+import static space.realkarmakun.io.Output.printOutLn;
+
 public class MenuItemRecursion extends MenuItem {
 
     public MenuItemRecursion() {
@@ -13,7 +15,7 @@ public class MenuItemRecursion extends MenuItem {
 
     @Override
     public void initialize(Scanner inp) {
-        System.out.println("Даты должны быть в формате ДД.ММ.ГГГГ");
+        printOutLn("Даты должны быть в формате ДД.ММ.ГГГГ");
         new Recursion().execute(inp);
     }
 }

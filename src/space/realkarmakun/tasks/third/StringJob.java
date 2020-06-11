@@ -5,68 +5,66 @@ import space.realkarmakun.tasks.Task;
 import java.util.Scanner;
 
 import static space.realkarmakun.io.Input.readStringWithCheck;
+import static space.realkarmakun.io.Output.printOutLn;
 
 public class StringJob extends Task {
 
     @Override
     public void execute(Scanner inp) {
 
-        System.out.println("Введите первую строку:");
+        printOutLn("Введите первую строку:");
         String firstString = readStringWithCheck(inp, "Вы ввели не строку. Попробуйте еще раз.");
-        System.out.println("Введите вторую строку:");
+        printOutLn("Введите вторую строку:");
         String secondString = readStringWithCheck(inp, "Вы ввели не строку. Попробуйте еще раз.");
 
         try {
             testEquality(firstString, secondString);
+            printOutLn("Строки совпадают посимвольно!");
         } catch (ValidationException e) {
-            System.out.println(e.getMessage());
+            printOutLn(e.getMessage());
         }
 
         try {
             testTrueEquality(firstString, secondString);
+            printOutLn("Строки совпадают посимвольно без пробелов и в нижнем регистре!");
         } catch (ValidationException e) {
-            System.out.println(e.getMessage());
+            printOutLn(e.getMessage());
         }
 
         try {
             testReverse(firstString, secondString);
+            printOutLn("Строки являются полиморфными!");
         } catch (ValidationException e) {
-            System.out.println(e.getMessage());
+            printOutLn(e.getMessage());
         }
 
         try {
             checkStringForRegex(firstString, "Первая строка являеется...");
         } catch (ValidationException e) {
-            System.out.println(e.getMessage());
+            printOutLn(e.getMessage());
         }
 
         try {
             checkStringForRegex(secondString, "Вторая строка является");
         } catch (ValidationException e) {
-            System.out.println(e.getMessage());
+            printOutLn(e.getMessage());
         }
     }
 
     public void testEquality(String first, String second) throws ValidationException {
-        if (stringsEquality(first, second)) {
-            System.out.println("Строки совпадают посимвольно!");
-        } else {
+        if (!(stringsEquality(first, second))) {
             throw new ValidationException("Строки НЕ совпадают посимвольно!\n");
         }
     }
 
     public void testTrueEquality(String first, String second) throws ValidationException {
-        if (stringsTrueEquality(first, second)) {
-            System.out.println("Строки совпадают посимвольно без пробелов и в нижнем регистре!");
-        } else {
+        if (!(stringsTrueEquality(first, second))) {
             throw new ValidationException("Строки НЕ совпадают посимвольно без пробелов в нижнем регистре!");
         }
     }
 
     public void testReverse(String first, String second) throws ValidationException {
-        if (first.equals(reverseString(second))) {
-            System.out.println("Строки являются полиморфными!");
-        } else {
+        if (!(first.equals(reverseString(second)))) {
             throw new ValidationException("Строки не полиморфны!");
         }
     }
@@ -107,19 +105,19 @@ public class StringJob extends Task {
 
         String emailRegex = "[^@ \\t\\r\\n]+@[^@ \\t\\r\\n]+\\.[^@ \\t\\r\\n]+";
         if (input.matches(emailRegex)) {
-            System.out.println("Электронной почтой");
+            printOutLn("Электронной почтой");
             check = check +1;
         }
 
         String phoneRegex = "^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$";
         if (input.matches(phoneRegex)) {
-            System.out.println("Номером телефона");
+            printOutLn("Номером телефона");
             check = check +1;
         }
 
         String ipv4Regex = "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}";
         if (input.matches(ipv4Regex)) {
-            System.out.println("IPv4 адресом");
+            printOutLn("IPv4 адресом");
             check = check +1;
         }
 

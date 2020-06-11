@@ -6,6 +6,7 @@ import space.realkarmakun.tasks.Task;
 import java.util.Scanner;
 
 import static space.realkarmakun.io.Input.readDoubleWithCheck;
+import static space.realkarmakun.io.Output.printOutLn;
 
 public class Formula extends Task {
     public double x;
@@ -16,12 +17,12 @@ public class Formula extends Task {
     @Override
     public void execute(Scanner inp) {
 
-        System.out.println("Введите x:");
+        printOutLn("Введите x:");
         setX(readDoubleWithCheck(inp ,"x не является double, попробуйте еще раз."));
 
         while (true) {
             try {
-                System.out.println("Введите y:");
+                printOutLn("Введите y:");
                 setY(readDoubleWithCheck(inp,"y не является double, попробуйте еще раз."));
                 break;
             } catch (FormulaException e) {
@@ -31,7 +32,7 @@ public class Formula extends Task {
 
         while (true) {
             try {
-                System.out.println("Введите z:");
+                printOutLn("Введите z:");
                 setZ(readDoubleWithCheck(inp,"z не является double, попробуйте еще раз."));
                 break;
             } catch (FormulaException e) {

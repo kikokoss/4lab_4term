@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.Scanner;
 
 import static space.realkarmakun.io.Input.readDateWithCheck;
+import static space.realkarmakun.io.Output.printOutLn;
 
 
 public class Recursion extends Task {
@@ -23,9 +24,9 @@ public class Recursion extends Task {
             this.firstSegment.clear();
             this.secondSegment.clear();
 
-            System.out.println("[!!!] Сейчас на ввод будет приниматся ПЕРВЫЙ отрезок.");
+            printOutLn("[!!!] Сейчас на ввод будет приниматся ПЕРВЫЙ отрезок.");
             createSegment(firstSegment, inp);
-            System.out.println("[!!!] Сейчас на ввод будет приниматся ВТОРОЙ отрезок.");
+            printOutLn("[!!!] Сейчас на ввод будет приниматся ВТОРОЙ отрезок.");
             createSegment(secondSegment, inp);
 
             ArrayList<Calendar> nSegment = calculateSegmentsForN(firstSegment,secondSegment);
@@ -40,7 +41,7 @@ public class Recursion extends Task {
                 accuratePowerOfTwo(n);
                 break;
             } else {
-                System.out.println("n больше либо равно 10, попробуйте взять меньший отрезок. \n");
+                printOutLn("n больше либо равно 10, попробуйте взять меньший отрезок. \n");
             }
         }
 
@@ -52,11 +53,11 @@ public class Recursion extends Task {
 
     public void accuratePowerOfTwo(long n) {
         if (n == 1) {
-            System.out.println("Является точной степенью двойки.");
+            printOutLn("Является точной степенью двойки.");
         } else if ( n % 2 == 0) {
             accuratePowerOfTwo(n / 2);
         } else {
-            System.out.println("Не является точной степенью двойки.");
+            printOutLn("Не является точной степенью двойки.");
         }
     }
 
@@ -64,12 +65,12 @@ public class Recursion extends Task {
 
         segment.clear();
         while (true) {
-            System.out.println("Введите первую дату отрезка:");
+            printOutLn("Введите первую дату отрезка:");
             Calendar firstDate = readDateWithCheck(inp);
-            System.out.println("Введите вторую дату отрезка:");
+            printOutLn("Введите вторую дату отрезка:");
             Calendar secondDate = readDateWithCheck(inp);
             if (secondDate.compareTo(firstDate) <= 0) {
-                System.out.println("Вторая дата меньше первой или ей равна. Проверьте ввод.");
+                printOutLn("Вторая дата меньше первой или ей равна. Проверьте ввод.");
             } else {
                 segment.add(firstDate);
                 segment.add(secondDate);
@@ -83,7 +84,7 @@ public class Recursion extends Task {
         ArrayList<Calendar> result = new ArrayList<Calendar>();
 
         if (firstSegment.get(1).compareTo(secondSegment.get(0)) < 0) {
-            System.out.println("Ваши отрезки не пересекаются. N будет меньше либо равен нулю. Попробуйте еще раз");
+            printOutLn("Ваши отрезки не пересекаются. N будет меньше либо равен нулю. Попробуйте еще раз");
             return null;
         }
 

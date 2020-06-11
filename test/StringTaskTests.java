@@ -1,11 +1,11 @@
 import org.junit.jupiter.api.Test;
-import space.realkarmakun.tasks.first.FormulaException;
 import space.realkarmakun.tasks.third.StringJob;
 import space.realkarmakun.tasks.third.ValidationException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class StringTaskTests {
+    // public void method_scenario_result()
 
     @Test
     public void stringsEquality_twoEqualStrings_theyAreEqual() {
