@@ -6,6 +6,7 @@ import space.realkarmakun.tasks.Task;
 import java.util.Scanner;
 
 import static space.realkarmakun.io.Input.readDoubleWithCheck;
+import static space.realkarmakun.io.Output.printFormula;
 import static space.realkarmakun.io.Output.printOutLn;
 
 public class Formula extends Task {
@@ -41,7 +42,7 @@ public class Formula extends Task {
         }
 
         calculateResult();
-        System.out.printf("(%.3f + %.3f^(1/2)) / %.3f 1= %.3f \n", x, y, z, result);
+        printFormula(x, y, z, result);
 
     }
 

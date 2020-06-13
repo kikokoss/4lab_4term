@@ -1,15 +1,13 @@
 package space.realkarmakun;
 
 import space.realkarmakun.menu.*;
-import space.realkarmakun.tasks.first.Formula;
-import space.realkarmakun.tasks.first.HelloWorld;
-import space.realkarmakun.tasks.second.Recursion;
-import space.realkarmakun.tasks.third.StringJob;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import static space.realkarmakun.io.Input.readIntWithCheck;
+import static space.realkarmakun.io.Output.printItems;
+import static space.realkarmakun.io.Output.printOutLn;
 
 public class Menu {
 
@@ -36,12 +34,12 @@ public class Menu {
 
     public static void printMenuItems() {
 
-        System.out.println("=============================================");
-        System.out.println("Константинов Павел. Лабараторная работа. 4 Семестр.");
+        printOutLn("=============================================");
+        printOutLn("Константинов Павел. Лабараторная работа. 4 Семестр.");
         for (int i = 0; i < menuItems.size(); i++) {
-            System.out.printf("[%d] %s\n", i, menuItems.get(i).getTitle());
+            printItems(i, menuItems.get(i).getTitle());
         }
-        System.out.println("=============================================");
+        printOutLn("=============================================");
     }
 
     public static void menuChooser(Scanner inp) {
@@ -49,7 +47,7 @@ public class Menu {
         boolean exit = false;
 
         do {
-            System.out.print("Введите номер пункта меню: ");
+            printOutLn("Введите номер пункта меню: ");
             int key = readIntWithCheck(inp,"Не верный ввод. Должно быть число");
             switch (key) {
                 case (0):
@@ -72,8 +70,8 @@ public class Menu {
                     exit = true;
                     break;
                 default:
-                    System.out.println("Введенное значение не соответствует ни одному из меню.");
-                    System.out.print("Попробуйте еще раз: ");
+                    printOutLn("Введенное значение не соответствует ни одному из меню.");
+                    printOutLn("Попробуйте еще раз: ");
                     break;
             }
         } while (!exit);
